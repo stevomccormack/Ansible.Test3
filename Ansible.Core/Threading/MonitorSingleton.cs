@@ -2,6 +2,10 @@
 
 namespace Ansible.Threading
 {
+    /// <summary>
+    /// Singleton Design Pattern for multi-thread environment
+    /// </summary>
+    /// <remarks>The monitor mechanism gives the greatest control over locking use cases.</remarks>
     public sealed class MonitorSingleton
     {
         private static readonly object _sync = new object();

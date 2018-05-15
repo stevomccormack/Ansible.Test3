@@ -1,5 +1,9 @@
 ﻿namespace Ansible
 {
+    /// <summary>
+    /// Singleton Design Pattern for single thread environment
+    /// </summary>
+    /// <remarks>Basic use case for singleton.</remarks>
     public sealed class Singleton
     {
         private static Singleton _instance;
