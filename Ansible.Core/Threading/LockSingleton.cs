@@ -4,16 +4,16 @@
     /// Singleton Design Pattern for multi-thread environment
     /// </summary>
     /// <remarks>Uses double-checked locking method - effective but expensive locking mechanism with least control.</remarks>
-    public sealed class Singleton
+    public sealed class LockSingleton
     {
         private static readonly object _sync = new object();
-        private static Singleton _instance;
+        private static LockSingleton _instance;
 
-        private Singleton()
+        private LockSingleton()
         {
         }
 
-        public static Singleton Instance
+        public static LockSingleton Instance
         {
             get
             {
@@ -22,7 +22,7 @@
 
                 lock( _sync )
                 {
-                    _instance = new Singleton();
+                    _instance = new LockSingleton();
                     return _instance;
                 }
             }
